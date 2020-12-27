@@ -1,7 +1,9 @@
 # microbit
 a place to hold micro bit scripts
-Dec 27 2020
-for ultrasonic sensor
+
+## Dec 27 2020
+
+## ultrasonic sensor
 
 I have rewritten the the script using only micropython and microbit library.
 follwing the tutorial at # tinybit ultrasonic using firialabs.com/blogs
