@@ -23,7 +23,9 @@ https://firialabs.com/blogs/lab-notes/ultrasonic-distance-sensor-with-python-and
 
 ## Jan 11th 2021
 
-### decToBinSpeech.py
+### decToBinSpeech2.py
+
+(improved dtob(n) function)
 
 While working with LEDs, breadboards and circuits while studying basic electronics on the Arduino
 I made a quick project to visualize four bit Binary and Decimal numbers with the microbit.
@@ -53,4 +55,31 @@ also there is some bleed if pin2 is on while speech.say is called
 the led will flicker.
 
 I have just timed it so that does not happen
+
+I wrote my own decimal to binary conversion using the division by 2 method
+
+my first attempt had an extra step (but still worked). but I improved it after doing it on paper.
+
+```Python
+
+def dtob(n):
+    b = []
+    # b is a list of binary conversion 9 = [1,0,0,1]
+    # I use the ones and zeros to on pin.write_digital(b[index])
+
+    while(n >= 1):
+        # first insert remainder after divison
+        b.insert(0, n % 2)
+        # then do floor divison by 2
+        n //= 2
+        
+    for i in range(4-len(b)):
+        # add leading zero for four bit numbers
+        b.insert(0, 0)
+        
+    return b
+    
+   ```
+
+
 
