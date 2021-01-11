@@ -41,3 +41,14 @@ twos = pin8
 fours = pin2
 
 eights = pin16
+
+I am also using speech to say the numbers
+
+speech sends a pulse to pin one so you must avoid that one too.
+
+also there is some bleed if pin2 is on while speech.say is called
+
+the led will flicker.
+
+I have just timed it so that does not happen
+
