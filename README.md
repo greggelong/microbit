@@ -21,7 +21,7 @@ https://makecode.microbit.org/device/pins
 
 https://firialabs.com/blogs/lab-notes/ultrasonic-distance-sensor-with-python-and-the-micro-bit
 
-Jan 11th 2021
+## Jan 11th 2021
 
 While working with LEDs, breadboards and circuits while studying basic electronics on the Arduino
 I made a quick project to visualize four bit Binary and Decimal numbers with the microbit.
@@ -30,9 +30,14 @@ they are being powerd only my microbit 3v. They are 5v on the arduino.
 
 I am using the break out board and chose pins that are not already coupled to the microbits led matrix
 
-# set the pins for LEDS to show binary
-# making sure not to use leads multi with mbit display 
+ set the pins for LEDS to show binary
+ 
+ making sure not to use leads multi with mbit display 
+ 
 ones = pin12
+
 twos = pin8
+
 fours = pin2
+
 eights = pin16
