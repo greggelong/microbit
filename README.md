@@ -1,4 +1,4 @@
-# microbit
+# microbit and Arduino
 a place to hold micro bit scripts
 
 ## Dec 27 2020
@@ -80,6 +80,15 @@ def dtob(n):
     return b
     
    ```
+I take a look at dectobindisplay1 for arduino
+
+you can see the way i had to implement it.
+
+The arrays are less cooperative in c type languages returning them from a function
+involves malock and all sorts of other things.  so just did it in the main loop. with help
+from some posts.
+I find arduino c type language much less flexible than micropython.
+However as for hooking up hardware it is much easier.  
 
 
 
