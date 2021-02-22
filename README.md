@@ -91,4 +91,64 @@ I find arduino c type language much less flexible than micropython.
 However as for hooking up hardware it is much easier.  
 
 
+# Feb 22 2021
+
+I am using two microbits connected by radio to send Serial data to a processing sketch
+
+the sender sends  a string by radio:
+
+a L if tilted left
+
+a R if tiltled right
+
+and an N if not tilted
+
+
+the receiver which is connected by usb to the computer 
+
+sends a string over the serial port to the processing sketch.
+
+The processing sketch reads the string over the serial and checks the
+
+charAt(0) if that char is L it moves a ball left 
+
+if it is R it moves a ball right
+
+if N  the ball is not moved.
+
+code for reciever in python microbit make code
+
+```Python
+
+def on_received_string(receivedString):
+    led.toggle(4, 0)
+    basic.show_string(receivedString)
+    serial.write_string(receivedString)
+radio.on_received_string(on_received_string)
+
+radio.set_group(1)
+
+```
+
+code for sender in python mocrobit make code
+
+```Python
+
+basic.show_icon(IconNames.ASLEEP)
+radio.set_group(1)
+
+def on_forever():
+    led.toggle(0, 0)
+    if input.is_gesture(Gesture.TILT_LEFT):
+        radio.send_string("L")
+    elif input.is_gesture(Gesture.TILT_RIGHT):
+        radio.send_string("R")
+    else:
+        radio.send_string("N")
+basic.forever(on_forever)
+
+
+
+
+```
 
