@@ -172,6 +172,10 @@ the program works by reading the values of the LDRs then
 
 then moving the servo toward the drection of most light (highest value)
 
+ldrServoMbit.py
+
+ldrServoMbit.hex
+
 ```Python
 ldr2 = 0
 ldr1 = 0
