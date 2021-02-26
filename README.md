@@ -151,4 +151,61 @@ basic.forever(on_forever)
 
 
 ```
+# Feb 26 2021
+
+using microbit with 2 LDRs and Servo 
+
+and reading the LDRs ananlog input values with serial on a linux terminal.
+
+
+I am in total using three pins + 3.3v and ground on the microbit.
+
+pin 1 and pin 2 are anolog input pins for getting values from LDRs
+
+the value is read from a point between LDR leg and a 5k resistor
+
+like my other LDR circuits in ardiuino
+
+pin0 is ouput for the 180 degree servo. using the servo library from makecode
+
+the program works by reading the values of the LDRs then
+
+then moving the servo toward the drection of most light (highest value)
+
+```Python
+ldr2 = 0
+ldr1 = 0
+headAngle = 90
+basic.show_icon(IconNames.ASLEEP)
+
+def on_forever():
+    global ldr1, ldr2, headAngle
+
+    ldr1 = pins.analog_read_pin(AnalogPin.P1)
+    ldr2 = pins.analog_read_pin(AnalogPin.P2)
+    
+    if ldr1 < ldr2 and headAngle < 175:
+        headAngle += 5
+        basic.show_icon(IconNames.HAPPY)
+    elif ldr1 > ldr2 and headAngle > 5:
+        headAngle += -5
+        
+    basic.show_icon(IconNames.SAD)
+    serial.write_value("ldr1", ldr1)
+    serial.write_value("ldr2", ldr2)
+    serial.write_value("head", headAngle)
+    servos.P0.set_angle(headAngle)
+
+basic.forever(on_forever)
+
+```
+
+using the serial is easy if screen is on linux
+
+Find which device node the micro:bit was assigned to with the command ls /dev/ttyACM*.
+
+If it was /dev/ttyACM0, type the command screen /dev/ttyACM0 115200
+
+
+
 
