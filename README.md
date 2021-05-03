@@ -231,6 +231,8 @@ The result of my playing around is the following functions
 
 to move a turtle like car
 
+This code is micropython not makecode python
+
 ```Python
 def bwards(speed, tm):
     ''' 
