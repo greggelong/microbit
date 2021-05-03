@@ -211,5 +211,99 @@ Find which device node the micro:bit was assigned to with the command ls /dev/tt
 If it was /dev/ttyACM0, type the command screen /dev/ttyACM0 115200
 
 
+# May 3rd  Keyes dc motor breakout board
 
+I ordered a Keyes breakout board from TaoBao
+
+The chinese company has a little info on their website
+
+it is not well documented and it is in Chinese
+
+but there is enough info to get it to work with some
+
+playing around.
+
+see the documentation at
+
+https://www.keyesrobot.cn/KE0136/
+
+The result of my playing around is the following functions
+
+to move a turtle like car
+
+```Python
+def bwards(speed, tm):
+    ''' 
+        backwards movement
+        
+        orientation 
+        motor connentions to outside
+        motor to front gears box to back
+        left side notch negitive up 
+        right side notch negative down
+    '''    
+        
+    pin1.write_analog(speed)  # speed control for a1 and a2
+    pin13.write_digital(1)  # a1 
+    pin12.write_digital(0)  # a2
+
+    pin2.write_analog(speed)  # speed control for b1 and b2
+
+    pin15.write_digital(1)  # b1
+    pin16.write_digital(0)
+
+    sleep(tm)
+
+    
+def fward(speed, tm):
+    ''' 
+        forwards movement
+        
+        orientation 
+        motor connentions to outside
+        motor to front gears box to back
+        left side notch negitive up 
+        right side notch negative down
+    ''' 
+
+    pin1.write_analog(speed)  # speed control for a1 and a2
+    pin13.write_digital(0)  # a1 
+    pin12.write_digital(1)  # a2
+
+    pin2.write_analog(speed)  # speed control for b1 and b2
+
+    pin15.write_digital(0)  # b 1
+    pin16.write_digital(1)  # b2
+
+    sleep(tm)
+
+def lt():
+
+    pin1.write_analog(500)  # speed control for a1 and a2
+    pin13.write_digital(0)  # a1 
+    pin12.write_digital(0)  # a2
+
+    pin2.write_analog(500)  # speed control for b1 and b2
+
+    pin15.write_digital(0)  # b1
+    pin16.write_digital(1)  # b2
+
+    sleep(700)
+
+def rt():
+
+    pin1.write_analog(500)  # speed control for a1 and a2
+    pin13.write_digital(0)  # a1 
+    pin12.write_digital(1)  # a2
+
+    pin2.write_analog(500)  # speed control for b1 and b2
+
+    pin15.write_digital(0)  # b1
+    pin16.write_digital(0)  # b2
+
+    sleep(700)
+
+
+
+```
 
