@@ -351,3 +351,10 @@ using the serial is easy if screen is on linux
 Find which device node the micro:bit was assigned to with the command ls /dev/ttyACM*.
 
 If it was /dev/ttyACM0, type the command screen /dev/ttyACM0 115200
+
+# maintenance
+
+I needed to re flash the firmware to get micropython to work again
+
+https://microbit.org/get-started/user-guide/firmware/
+
