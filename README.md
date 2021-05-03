@@ -308,4 +308,46 @@ def rt():
 
 
 ```
+# May 3rd Light dependant resistors and micropython
 
+will incorporate two LDRs to seek light with the turtle car
+
+to make a Braitenberg vehicle
+
+I was thinking I could just as defalt go forward at a slow speed 
+
+and map the speed of each wheel to how much light it is getting
+
+if the right eye senses the light
+
+the left wheel should speed up to turn into the light
+
+and if the left eye senses 
+
+the right wheel should go faster to turn into the light
+
+
+a light avoiding vehicle would do just the opposite
+
+to use ldrs with micropython  see this script
+
+```Python
+from microbit import *
+
+ldr1 = 0
+
+uart.init(115200)
+
+while True:
+    
+    ldr1 = pin1.read_analog()
+    display.scroll(ldr1)
+    uart.write(str(ldr1)+"\n")
+   
+
+```
+using the serial is easy if screen is on linux
+
+Find which device node the micro:bit was assigned to with the command ls /dev/ttyACM*.
+
+If it was /dev/ttyACM0, type the command screen /dev/ttyACM0 115200
