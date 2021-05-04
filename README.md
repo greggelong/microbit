@@ -360,6 +360,8 @@ https://microbit.org/get-started/user-guide/firmware/
 
 # May 4th Braitenberg vehicle
 
+https://youtu.be/UafjlsHNAg4
+
 The simple robot is a model of 
 >Vehicle 2b
 >The agent has the same two (left and right) symmetric sensors (e.g. light detectors), but each one stimulating a wheel on the other side of the body. It obeys the following rule:
