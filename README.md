@@ -358,3 +358,45 @@ I needed to re flash the firmware to get micropython to work again
 
 https://microbit.org/get-started/user-guide/firmware/
 
+# May 4th Braitenberg vehicle
+
+The simple robot is a model of 
+>Vehicle 2b
+>The agent has the same two (left and right) symmetric sensors (e.g. light detectors), but each one stimulating a wheel on the other side of the body. It obeys the following rule:
+
+>More light left → right wheel turns faster → turns towards the left, closer to the light.
+>As a result, the robot follows the light; it moves to be closer to the light.
+
+The LDRs are the sensors and are analog_read 0 -1023
+
+The speed is analong_write 0-1023 
+
+no mapping is necessary.
+
+```Python
+from microbit import *
+ldr1 = 0
+ldr2 = 0
+uart.init(115200)
+pin14.write_digital(1)
+
+while True:
+    
+    display.off()
+    
+    ldr1 = pin0.read_analog() # read the ldrs
+    ldr2 = pin3.read_analog()
+    sleep(200)
+    uart.write(str(ldr1)+ "   "+ str(ldr2)+"\n")
+    pin1.write_analog(ldr1)  # speed control for a1 and a2
+    pin13.write_digital(0)  # a1
+    pin12.write_digital(1)  # a2
+
+    pin2.write_analog(ldr2)  # speed control for b1 and b2
+
+    pin15.write_digital(0)  # b 1
+    pin16.write_digital(1)  # b2
+        
+
+
+```
