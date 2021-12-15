@@ -155,6 +155,8 @@ basic.forever(on_forever)
 
 using microbit with 2 LDRs and Servo 
 
+https://www.youtube.com/watch?v=-7wrmRCEnB0
+
 and reading the LDRs ananlog input values with serial on a linux terminal.
 
 
