@@ -428,5 +428,6 @@ turtle3whisker.py
   I will have to do this with an Arduino and try not to short that out
   
   
-  I will post the video
+  https://youtu.be/jEU2HJGpL88
+  
 
