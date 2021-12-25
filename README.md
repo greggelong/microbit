@@ -404,3 +404,29 @@ while True:
 
 
 ```
+
+
+
+
+# Whisker
+ on Christmas day 2021 I finaly got my Whisker to work but there were problems
+ 
+turtle3whisker.py
+  this code works to simply move forward continuously until
+  the whisker is triggered  then moves backwards and right around 180 degrees
+  
+  I killed a microbit (the blue one )  shorting out when hooking up the power
+  
+  really stupid mistake. 
+  
+  the motor controller seems to work but it doesn't send power to the microbit as it did before
+  
+  it now only sends power to the motors
+  
+  I have to hook up a separate 3v for the microbit to get it to work see video
+  
+  I will have to do this with an Arduino and try not to short that out
+  
+  
+  I will post the video
+
